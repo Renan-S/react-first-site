@@ -1,3 +1,3 @@
-# react-first-site
+# react-first-site (form-component branch)
 
-Objective: pratice React
+Objective: learn how to use components

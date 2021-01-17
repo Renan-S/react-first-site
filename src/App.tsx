@@ -1,9 +1,14 @@
+import Footer from "./Footer";
+import Form from "./form/Form";
+import Header from "./Header";
+
 function App() {
   return (
-    <div>
-      <button>Click!</button>
-      <p>My App</p>
-    </div>
+    <>
+      <Header />
+      <Form />
+      <Footer />
+    </>
   );
 }
 
