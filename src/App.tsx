@@ -1,9 +1,13 @@
+import React from "react";
+import Button from "./Button";
+import Student from "./Student";
+
 function App() {
   return (
-    <div>
-      <button>Click!</button>
-      <p>My App</p>
-    </div>
+    <>
+      <Button></Button>
+      <Student></Student>
+    </>
   );
 }
 
