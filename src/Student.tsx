@@ -39,6 +39,15 @@ const Student = () => {
     return { subject: satinized[0], grade: +satinized[1] };
   };
 
+  const deleteItem = (index: number) => {
+    // const filteredGrades = data.grades.filter(
+    //   (_, counter) => counter !== index
+    //   );
+    //   setData({ ...data, grades: filteredGrades });
+    data.grades.splice(index, 1);
+    setData({ ...data });
+  };
+
   return (
     <div>
       <input
@@ -47,7 +56,7 @@ const Student = () => {
         type="text"
         name="Student"
         value={data.student}
-        placeholder="Congrats Roberto!"
+        placeholder="Set your student name"
         onChange={changeStudentName}
       ></input>
       <input
@@ -61,9 +70,20 @@ const Student = () => {
       ></input>
       <ul>
         {data.grades.map(({ subject, grade }, index) => (
-          <li key={index}>
-            {subject}: {grade}
-          </li>
+          <div key={index} style={{ display: "flex" }}>
+            <li style={{ marginRight: "1rem" }}>
+              {subject}: {grade}
+            </li>
+            <span
+              onClick={() => {
+                deleteItem(index);
+              }}
+              className="material-icons"
+              style={{ color: "red" }}
+            >
+              close
+            </span>
+          </div>
         ))}
       </ul>
       <p hidden={!data.college}>Congratulations on your degree!</p>
